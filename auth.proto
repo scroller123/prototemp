@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package LevelUp.Proto;
+
+message CheckUserPasswordRequest {
+    string phone_number = 1;
+    string password = 2;
+    string country = 3;
+}
+
+message CheckUserPasswordResponse {
+    message UserId {
+        string id = 1;
+    }
+
+    Response response = 1;
+    repeated UserId user_id_array = 2;
+}
+
+message Response {
+    string result = 1;
+    uint32 error_code = 2;
+    string error_message = 3;
+}
